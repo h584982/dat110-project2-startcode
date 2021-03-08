@@ -117,11 +117,8 @@ public class Dispatcher extends Stopable {
 	public void onDeleteTopic(DeleteTopicMsg msg) {
 
 		Logger.log("onDeleteTopic:" + msg.toString());
-
-		// TODO: delete the topic from the broker storage
-		// the topic is contained in the delete topic message
+		storage.deleteTopic(msg.getTopic());
 		
-		throw new UnsupportedOperationException(TODO.method());
 	}
 
 	public void onSubscribe(SubscribeMsg msg) {
