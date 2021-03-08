@@ -62,7 +62,7 @@ public class Storage {
 
 		// TODO: remove client session for user from the storage
 
-		throw new UnsupportedOperationException(TODO.method());
+		clients.remove(user, clients.get(user));
 		
 	}
 
