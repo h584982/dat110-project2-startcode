@@ -1,5 +1,6 @@
 package no.hvl.dat110.broker;
 
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.Collection;
 
@@ -146,12 +147,19 @@ public class Dispatcher extends Stopable {
 	public void onPublish(PublishMsg msg) {
 
 		Logger.log("onPublish:" + msg.toString());
+		String topic = msg.getTopic();
+		Set<String> clients = storage.getSubscribers(topic);
 
+		for(String client : clients){
+
+			ClientSession session = storage.getSession(client);
+			session.send(msg);
+
+		}
 		// TODO: publish the message to clients subscribed to the topic
 		// topic and message is contained in the subscribe message
 		// messages must be sent used the corresponding client session objects
-		
-		throw new UnsupportedOperationException(TODO.method());
+
 
 	}
 }
