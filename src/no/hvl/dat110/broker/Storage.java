@@ -75,7 +75,9 @@ public class Storage {
 	}
 
 	public void deleteTopic(String topic) {
+
 		subscriptions.remove(topic);
+
 
 	}
 
@@ -88,9 +90,7 @@ public class Storage {
 	}
 
 	public void removeSubscriber(String user, String topic) {
+		subscriptions.get(topic).remove(user);
 
-		// TODO: remove the user as subscriber to the topic
-
-		throw new UnsupportedOperationException(TODO.method());
 	}
 }
