@@ -63,7 +63,7 @@ public class Storage {
 		// TODO: remove client session for user from the storage
 
 		clients.remove(user, clients.get(user));
-		
+
 	}
 
 	public void createTopic(String topic) {
@@ -75,11 +75,8 @@ public class Storage {
 	}
 
 	public void deleteTopic(String topic) {
+		subscriptions.remove(topic);
 
-		// TODO: delete topic from the storage
-
-		throw new UnsupportedOperationException(TODO.method());
-		
 	}
 
 	public void addSubscriber(String user, String topic) {
