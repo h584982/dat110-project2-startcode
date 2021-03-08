@@ -52,9 +52,9 @@ public class Storage {
 
 	public void addClientSession(String user, Connection connection) {
 
-		// TODO: add corresponding client session to the storage
-		
-		throw new UnsupportedOperationException(TODO.method());
+
+		clients.put(user, new ClientSession(user, connection));
+
 		
 	}
 
