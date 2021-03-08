@@ -23,9 +23,19 @@ public class TemperatureDevice {
 		TemperatureSensor sensor= new TemperatureSensor();
 		for(int i= 0; i < COUNT; i++){
 			// - publish the temperature(s)
-			String message = Integer.toString(sensor.read());
-			client.publish(topic, message);
 
+			String message = Integer.toString(sensor.read());
+			System.out.println(message);
+
+			client.publish(topic, message);
+			try
+			{
+				Thread.sleep(1000);
+			}
+
+			catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 		// - disconnect from the broker
 		client.disconnect();

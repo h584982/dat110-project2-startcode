@@ -70,7 +70,7 @@ public class Storage {
 	public void createTopic(String topic) {
 
 		subscriptions.put(topic, new HashSet<String>());
-	
+
 	}
 
 	public void deleteTopic(String topic) {
@@ -86,7 +86,7 @@ public class Storage {
 		if(subscriber == null)
 			return;
 		subscriber.add(user);
-		subscriptions.replace(topic, subscriber);
+		//subscriptions.replace(topic, subscriber);
 
 	}
 
