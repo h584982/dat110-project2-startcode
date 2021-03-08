@@ -109,8 +109,8 @@ public class Dispatcher extends Stopable {
 	public void onCreateTopic(CreateTopicMsg msg) {
 
 		Logger.log("onCreateTopic:" + msg.toString());
-		String topic = msg.getTopic();
-		storage.createTopic(topic);
+
+		storage.createTopic(msg.getTopic());
 
 	}
 
@@ -128,10 +128,8 @@ public class Dispatcher extends Stopable {
 
 		Logger.log("onSubscribe:" + msg.toString());
 
-		// TODO: subscribe user to the topic
-		// user and topic is contained in the subscribe message
-		
-		throw new UnsupportedOperationException(TODO.method());
+
+		storage.addSubscriber(msg.getUser(),msg.getTopic());
 
 	}
 
