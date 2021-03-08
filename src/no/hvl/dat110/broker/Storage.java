@@ -81,10 +81,10 @@ public class Storage {
 
 	public void addSubscriber(String user, String topic) {
 
-		// TODO: add the user as subscriber to the topic
-		
-		throw new UnsupportedOperationException(TODO.method());
-		
+		Set<String> subscriber = subscriptions.get(topic);
+		subscriber.add(user);
+		subscriptions.replace(topic, subscriber);
+
 	}
 
 	public void removeSubscriber(String user, String topic) {
