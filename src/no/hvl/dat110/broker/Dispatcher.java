@@ -118,7 +118,7 @@ public class Dispatcher extends Stopable {
 
 		Logger.log("onDeleteTopic:" + msg.toString());
 		storage.deleteTopic(msg.getTopic());
-		
+
 	}
 
 	public void onSubscribe(SubscribeMsg msg) {
