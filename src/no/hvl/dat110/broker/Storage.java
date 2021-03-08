@@ -83,6 +83,8 @@ public class Storage {
 	public void addSubscriber(String user, String topic) {
 
 		Set<String> subscriber = subscriptions.get(topic);
+		if(subscriber == null)
+			return;
 		subscriber.add(user);
 		subscriptions.replace(topic, subscriber);
 
