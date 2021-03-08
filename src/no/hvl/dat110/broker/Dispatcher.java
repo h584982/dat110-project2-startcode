@@ -135,10 +135,7 @@ public class Dispatcher extends Stopable {
 
 		Logger.log("onUnsubscribe:" + msg.toString());
 
-		// TODO: unsubscribe user to the topic
-		// user and topic is contained in the unsubscribe message
-		
-		throw new UnsupportedOperationException(TODO.method());
+		storage.removeSubscriber(msg.getUser(),msg.getTopic());
 	}
 
 	public void onPublish(PublishMsg msg) {
